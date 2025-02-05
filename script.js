@@ -1,3 +1,24 @@
+// Add these variables at the top
+const tarotCard = document.getElementById("tarotCard");
+const crystalBall = document.querySelector('.crystal-ball');
+
+// Update the event listener
+askButton.addEventListener("click", () => {
+  if (questionInput.value.trim() === "") {
+    fortuneResponse.textContent = "Please ask a question!";
+  } else {
+    // Add visual effects
+    tarotCard.classList.add('visible-card');
+    crystalBall.style.animation = 'glow 1s infinite alternate';
+    fortuneResponse.textContent = getRandomFortune();
+    
+    // Remove animations after 2 seconds
+    setTimeout(() => {
+      tarotCard.classList.remove('visible-card');
+      crystalBall.style.animation = '';
+    }, 2000);
+  }
+});
 // Preset responses
 const fortunes = [
   "It is certain.",

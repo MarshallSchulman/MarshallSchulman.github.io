@@ -48,3 +48,60 @@ button:hover {
   font-size: 1.2rem;
   color: #f1c40f;
 }
+body {
+    /* Keep existing styles */
+    background-image: url('https://images.unsplash.com/photo-1532274402911-5a369e4c4bb5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    background-color: rgba(44, 62, 80, 0.85); /* Dark overlay */
+  }
+  .crystal-ball {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    display: block;
+    filter: drop-shadow(0 0 10px #f1c40f);
+  }
+  .sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: sparkle 1s infinite;
+  }
+  
+  @keyframes sparkle {
+    0% { transform: scale(0); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+  .hidden-card {
+    width: 200px;
+    margin: 20px auto;
+    display: none;
+    filter: sepia(1) hue-rotate(300deg);
+  }
+  
+  .visible-card {
+    display: block;
+    animation: flip 1.5s ease-in-out;
+  }
+  
+  @keyframes flip {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+  }
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 5px #f1c40f); }
+    to { filter: drop-shadow(0 0 20px #f1c40f); }
+  }
+  
+  .crystal-ball {
+    transition: transform 0.5s;
+  }
+  
+  .crystal-ball:hover {
+    transform: rotate(360deg);
+  }
